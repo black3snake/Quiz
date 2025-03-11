@@ -7,6 +7,9 @@ body {
   font-family: 'Museo Sans Cyrl', sans-serif;
   color: #333333;
 }
+a {
+  color: #6933dc;
+}
 @font-face {
   font-family: 'Museo Sans Cyrl';
   src: url('../fonts/MuseoSansCyrl-500.ttf');

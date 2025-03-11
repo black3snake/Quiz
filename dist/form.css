@@ -1,0 +1,75 @@
+.form {
+  padding: 140px 0 123px 0;
+}
+.form .container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.form .container .form__content {
+  max-width: 504px;
+}
+.form .container .form__content .form__title {
+  font-size: 48px;
+  font-family: 'Museo Sans Cyrl bold', sans-serif;
+}
+.form .container .form__content .form__title span {
+  color: #6933dc;
+}
+.form .container .form__content .form__details {
+  margin-top: 60px;
+  max-width: 485px;
+}
+.form .container .form__content .form__details .form__group {
+  position: relative;
+  border: 1px solid #c1bbbb;
+  background: #fff;
+  padding: 12px 23px 13px 23px;
+  width: 485px;
+  height: 74px;
+  transition: all 0.2s ease;
+}
+.form .container .form__content .form__details .form__group:focus-within {
+  border-left: 5px solid #6933dc;
+}
+.form .container .form__content .form__details .form__group .form__input {
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  font-size: 18px;
+  color: #6933dc;
+  font-family: 'Museo Sans Cyrl bold', sans-serif;
+}
+.form .container .form__content .form__details .form__group .form__input:focus ~ .form__label,
+.form .container .form__content .form__details .form__group .form__input:not(:focus):valid ~ .form__label {
+  top: 12px;
+}
+.form .container .form__content .form__details .form__group .form__input:valid,
+.form .container .form__content .form__details .form__group .form__input:focus {
+  margin-top: 27px;
+  height: auto;
+}
+.form .container .form__content .form__details .form__group .form__label {
+  font-size: 18px;
+  position: absolute;
+  left: 23px;
+  top: 26px;
+  transition: 0.2s ease all;
+}
+.form .container .form__content .form__details .form__agree {
+  margin-top: 15px;
+  font-size: 12px;
+}
+.form .container .form__content .form__details .form__agree input {
+  position: relative;
+  top: 2px;
+  cursor: pointer;
+}
+.form .container .form__content .form__details .form__agree label {
+  cursor: pointer;
+}
+.form .container .form__content .form__details .form__action {
+  margin-top: 60px;
+}

@@ -10,18 +10,49 @@
 </head>
 <body>
 <header class="header">
-  <div class="container">
-    <div class="logo">
-      <img src="images/Logo.png" alt="logo">
+    <div class="container">
+        <div class="logo">
+            <img src="images/Logo.png" alt="logo">
+        </div>
     </div>
-  </div>
 </header>
-
-
-
+<section class="form">
+    <div class="container">
+        <div class="form__content">
+            <h1 class="form__title">Введите свои
+                <span>данные</span>
+            </h1>
+            <div class="form__details">
+                <div class="form__group">
+                    <input type="text" class="form__input" id="name" required>
+                    <label for="name" class="form__label">Имя</label>
+                </div>
+                <div class="form__group">
+                    <input type="text" class="form__input" id="last-name" required>
+                    <label for="last-name" class="form__label">Фамилия</label>
+                </div>
+                <div class="form__group">
+                    <input type="text" class="form__input" id="email" required>
+                    <label for="email" class="form__label">Электронная почта</label>
+                </div>
+                <div class="form__agree">
+                    <input type="checkbox" name="" id="agree" required>
+                    <label for="agree">Я ознакомлен
+                        <a href="#">с правилами сайта</a>
+                    </label>
+                </div>
+                <div class="form__action">
+                    <button class="button">Перейти к выбору теста</button>
+                </div>
+            </div>
+        </div>
+        <div class="form__image">
+            <img src="images/info_image.png" alt="info image">
+        </div>
+    </div>
+</section>
 <footer class="footer">
-  «АйтилогияQuiz» © Все права защищены / 2022
+    «АйтилогияQuiz» © Все права защищены / 2022
 </footer>
-
 </body>
 </html>
