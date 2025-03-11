@@ -21,7 +21,7 @@ gulp.task('serve', function () {
         }
     });
     gulp.watch('./src/*.less', gulp.parallel('less'));
-    gulp.watch('./index.html').on('change', browserSync.reload);
+    gulp.watch('./*.html').on('change', browserSync.reload);
     gulp.watch('./scripts/script.js').on('change', browserSync.reload);
 })
 
