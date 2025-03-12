@@ -10,13 +10,6 @@
 .main .container .main__content {
   max-width: 588px;
 }
-.main .container .main__content .main__title {
-  font-size: 54px;
-  font-family: 'Museo Sans Cyrl bold', sans-serif;
-}
-.main .container .main__content .main__title span {
-  color: #6933DC;
-}
 .main .container .main__content .main__description {
   margin-top: 40px;
   font-size: 20px;
