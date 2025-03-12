@@ -41,6 +41,15 @@ a {
 .button:hover {
   background: #2d0382;
 }
+.button-transparent {
+  background: transparent;
+  color: #6933dc;
+  border: 1px solid #6933dc;
+}
+.button-transparent:hover {
+  background: #6933dc;
+  color: #fff;
+}
 .common__title {
   font-size: 48px;
   font-family: 'Museo Sans Cyrl bold', sans-serif;

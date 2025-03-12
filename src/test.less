@@ -1,0 +1,150 @@
+.test {
+    padding: 20px 0 50px 0;
+    .container {
+        .test__pre-title {
+            font-size: 20px;
+            color: #dcdcf3;
+        }
+        .test__progress-bar {
+            margin: 60px 0 80px 0;
+            display: flex;
+            .test__progress-bar-item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                position: relative;
+
+                &:not(:first-child) {
+                    margin-left: 130px;
+                }
+                &:not(:last-child)::before {
+                    content: '';
+                    z-index: -1;
+                    position: absolute;
+                    width: 184px;
+                    height: 6px;
+                    background: #DCDCF3;
+                    left: 29px;
+                    top: 10px;
+                }
+                .test__progress-bar-item-circle {
+                    width: 26px;
+                    height: 26px;
+                    background: #DCDCF3;
+                    border-radius: 50%;
+                }
+                .test__progress-bar-item-text {
+                    font-size: 13px;
+                    margin-top: 10px;
+                }
+
+            }
+            .test__progress-bar-item.complete:not(:last-child)::before {
+                background: #6933DC;
+            }
+            .test__progress-bar-item.active::after {
+                content: '';
+                border-radius: 50%;
+                position: absolute;
+                z-index: 1;
+                width: 14px;
+                height: 14px;
+                background: #DCDCF3;
+                top: 6px;
+
+            }
+            .test__progress-bar-item.complete .test__progress-bar-item-circle,
+            .test__progress-bar-item.active .test__progress-bar-item-circle {
+                background: #6933DC;
+            }
+
+        }
+        .test__question {
+            .test__question-title {
+                font-size: 36px;
+                font-family: 'Museo Sans Cyrl bold', sans-serif;
+                span {
+                    color: #6933dc;
+                }
+            }
+            .test__question-options {
+                margin-top: 58px;
+                min-height: 344px;
+                .test__question-option {
+                    font-size: 20px;
+                    margin-bottom: 20px;
+                    display: flex;
+                    label {
+                        cursor: pointer;
+                    }
+                    input[type=radio] {
+                        appearance: none;
+                        -webkit-appearance: none;
+                        width: 20px;
+                        height: 20px;
+                        border: 3px solid #6933dc;
+                        border-radius: 50%;
+                        margin: 0 13px 0 0;
+                        transform: translateY(2px);
+                        display: grid;
+                        place-content: center;
+                        &::before {
+                            content: '';
+                            width: 10px;
+                            height: 10px;
+                            border-radius: 50%;
+                            box-shadow: inset 10px 10px #6933dc;
+                            transition: .2s ease transform;
+                            transform: scale(0);
+                        }
+                        &:checked::before {
+                            transform: scale(1);
+                        }
+                    }
+                }
+            }
+        }
+        .test__actions {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .test__time {
+                display: flex;
+                align-items: center;
+                .test__time-text {
+                    font-size: 17px;
+                    color: #6933dc;
+                    margin-right: 15px;
+                }
+                .test__time-clock {
+                    background-image: url("../images/timer.png");
+                    background-size: cover;
+                    background-position: center;
+                    width: 27px;
+                    height: 29px;
+                    font-size: 10px;
+                    text-align: center;
+                    line-height: 29px;
+                }
+            }
+        }
+        .test__pass-question {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 10px;
+            a {
+                font-size: 17px;
+                color: #6933dc;
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+            img {
+                margin-left: 13px;
+            }
+        }
+    }
+}
