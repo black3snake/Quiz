@@ -41,6 +41,13 @@ a {
 .button:hover {
   background: #2d0382;
 }
+.common__title {
+  font-size: 48px;
+  font-family: 'Museo Sans Cyrl bold', sans-serif;
+}
+.common__title span {
+  color: #6933dc;
+}
 .footer {
   text-align: center;
   padding: 40px 0;

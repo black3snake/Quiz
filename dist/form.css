@@ -9,13 +9,6 @@
 .form .container .form__content {
   max-width: 504px;
 }
-.form .container .form__content .form__title {
-  font-size: 48px;
-  font-family: 'Museo Sans Cyrl bold', sans-serif;
-}
-.form .container .form__content .form__title span {
-  color: #6933dc;
-}
 .form .container .form__content .form__details {
   margin-top: 60px;
   max-width: 485px;

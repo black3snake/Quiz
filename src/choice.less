@@ -1,0 +1,46 @@
+.choice {
+    padding: 180px 0 227px 0;
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .choice__content {
+            max-width: 583px;
+            .choice__title {
+
+            }
+            .choice__description {
+                margin-top: 40px;
+                font-size: 18px;
+            }
+            .choice__options {
+                margin-top: 60px;
+            }
+            .choice__option {
+                border: 1px solid #c1bbbb;
+                width: 583px;
+                //height: 74px;
+                background: #fff;
+                font-size: 18px;
+                padding: 26px 70px 26px 40px;
+                position: relative;
+                transition: all 0.2s ease;
+                &:hover .choice__option-arrow {
+                    display: block;
+                }
+                &:hover {
+                    border-left: 5px solid #6933dc;
+                    cursor: pointer;
+                    color: #6933dc;
+                    font-family: 'Museo Sans Cyrl bold', sans-serif;
+                }
+            }
+            .choice__option-arrow {
+                position: absolute;
+                right: 40px;
+                top: 27px;
+                display: none;
+            }
+        }
+    }
+}
