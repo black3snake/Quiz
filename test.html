@@ -18,28 +18,28 @@
 </header>
 <section class="test">
     <div class="container">
-        <div class="test__pre-title">Тест №1. “JavaScript: Начальный уровень”</div>
-        <div class="test__progress-bar">
-            <div class="test__progress-bar-item complete">
-                <div class="test__progress-bar-item-circle"></div>
-                <div class="test__progress-bar-item-text">Вопрос 1</div>
-            </div>
-            <div class="test__progress-bar-item active">
-                <div class="test__progress-bar-item-circle"></div>
-                <div class="test__progress-bar-item-text">Вопрос 2</div>
-            </div>
-            <div class="test__progress-bar-item">
-                <div class="test__progress-bar-item-circle"></div>
-                <div class="test__progress-bar-item-text">Вопрос 3</div>
-            </div>
-            <div class="test__progress-bar-item">
-                <div class="test__progress-bar-item-circle"></div>
-                <div class="test__progress-bar-item-text">Вопрос 4</div>
-            </div>
-            <div class="test__progress-bar-item">
-                <div class="test__progress-bar-item-circle"></div>
-                <div class="test__progress-bar-item-text">Вопрос 5</div>
-            </div>
+        <div class="test__pre-title" id="pre-title">Тест №1. “JavaScript: Начальный уровень”</div>
+        <div class="test__progress-bar" id="progress-bar">
+<!--            <div class="test__progress-bar-item complete">-->
+<!--                <div class="test__progress-bar-item-circle"></div>-->
+<!--                <div class="test__progress-bar-item-text">Вопрос 1</div>-->
+<!--            </div>-->
+<!--            <div class="test__progress-bar-item active">-->
+<!--                <div class="test__progress-bar-item-circle"></div>-->
+<!--                <div class="test__progress-bar-item-text">Вопрос 2</div>-->
+<!--            </div>-->
+<!--            <div class="test__progress-bar-item">-->
+<!--                <div class="test__progress-bar-item-circle"></div>-->
+<!--                <div class="test__progress-bar-item-text">Вопрос 3</div>-->
+<!--            </div>-->
+<!--            <div class="test__progress-bar-item">-->
+<!--                <div class="test__progress-bar-item-circle"></div>-->
+<!--                <div class="test__progress-bar-item-text">Вопрос 4</div>-->
+<!--            </div>-->
+<!--            <div class="test__progress-bar-item">-->
+<!--                <div class="test__progress-bar-item-circle"></div>-->
+<!--                <div class="test__progress-bar-item-text">Вопрос 5</div>-->
+<!--            </div>-->
 
         </div>
         <div class="test__question">
@@ -54,7 +54,7 @@
             </div>
             <div class="test__time">
                 <div class="test__time-text">Осталось времени:</div>
-                <div class="test__time-clock">49</div>
+                <div class="test__time-clock" id="timer">59</div>
             </div>
             <div class="test__next-action">
                 <button class="button button-transparent" id="next" disabled>Далее</button>
