@@ -1,5 +1,5 @@
 .result {
-  padding: 140px 0 91px 0;
+  padding: 100px 0 80px 0;
   text-align: center;
 }
 .result .container {
@@ -10,7 +10,7 @@
 }
 .result .container .result__question-image {
   position: absolute;
-  top: 225px;
+  top: 85px;
   z-index: -1;
 }
 .result .container .result-title {
@@ -29,4 +29,24 @@
   font-family: 'Museo Sans Cyrl bold', sans-serif;
   font-size: 158px;
   color: #fff;
+}
+.correct {
+  margin-bottom: 30px;
+}
+.correct .container .correct-answers {
+  display: flex;
+  justify-content: flex-end;
+}
+.correct .container .correct-answers a {
+  font-size: 17px;
+  color: #6933dc;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+.correct .container .correct-answers a:hover {
+  text-decoration: underline;
+}
+.correct .container .correct-answers img {
+  margin-left: 13px;
 }
