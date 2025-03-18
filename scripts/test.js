@@ -7,6 +7,7 @@
         prevButtonElement: null,
         passButtonElement: null,
         progressBarElement: null,
+        passQuestionElement: null,
         currentQuestionIndex: 1,
         userResult: [],
         init() {
@@ -47,11 +48,26 @@
             this.prevButtonElement = document.getElementById('prev');
             this.prevButtonElement.onclick = this.move.bind(this, 'prev')
 
+            const that = this;
             this.passButtonElement = document.getElementById('pass');
-            this.passButtonElement.onclick = this.move.bind(this, 'pass')
+            this.passButtonElement.onclick = function (e) {
+                if (e.target.getAttribute('disabled')) {
+                    return;
+                }
+                that.move('pass')
+            }
+
+            this.passQuestionElement = document.getElementsByClassName('test__pass-question')[0];
 
             this.prepareProgressBar();
             this.showQuestion();
+
+            // document.querySelectorAll('.test__question-option').forEach(el => {
+            //     el.addEventListener('change', function () {
+            //         that.passButtonElement.setAttribute('disabled', 'disabled');
+            //         // that.passQuestionElement.setAttribute('disabled', 'disabled');
+            //     })
+            // })
 
             const timerElement = document.getElementById('timer');
             let seconds = 59;
@@ -63,6 +79,7 @@
                     clearInterval(interval);
                 }
             }.bind(this),1000);
+
         },
         // работа с прогресбаром
         prepareProgressBar() {
@@ -138,6 +155,18 @@
             } else {
                 this.prevButtonElement.setAttribute('disabled', 'disabled');
             }
+
+            this.passButtonElement.removeAttribute('disabled');
+            this.passButtonElement.classList.remove('dis');
+            that.passButtonElement.children[0].removeAttribute('style');
+            document.querySelectorAll('.test__question-option').forEach(el => {
+                el.addEventListener('change', function () {
+                    that.passButtonElement.setAttribute('disabled', 'disabled');
+                    that.passButtonElement.className = 'dis';
+                    that.passButtonElement.children[0].style.display = 'none';
+                })
+            })
+
         },
         chooseAnswer() {
             this.nextButtonElement.removeAttribute('disabled');
@@ -197,17 +226,20 @@
         },
         complete() {
             const url = new URL(location.href);
-            const id = url.searchParams.get("id");
-            const name = url.searchParams.get("name");
-            const lastName = url.searchParams.get("lastName");
-            const email = url.searchParams.get("email");
+            const idObj = {
+                id: url.searchParams.get('id'),
+                name: url.searchParams.get('name'),
+                lastName: url.searchParams.get('lastName'),
+                email: url.searchParams.get('email'),
+            }
+
             const xhr = new XMLHttpRequest();
-            xhr.open('POST', 'https://testologia.ru/pass-quiz?id=' + id, false);
+            xhr.open('POST', 'https://testologia.ru/pass-quiz?id=' + idObj.id, false);
             xhr.setRequestHeader('Content-type', 'application/json; charset=UTF-8');
             xhr.send(JSON.stringify({
-                name: name,
-                lastName: lastName,
-                email: email,
+                name: idObj.name,
+                lastName: idObj.lastName,
+                email: idObj.email,
                 results: this.userResult
             }))
 
@@ -220,11 +252,33 @@
                 }
                 if (result) {
                     // console.log(result);
+                    this.saveSessionStorage(this.userResult, result, idObj);
                     location.href = 'result.html?score=' + result.score + '&total=' + result.total;
                 }
             } else {
                 location.href = "index.html";
             }
+
+        },
+        saveSessionStorage(arrayObj, resultObj, idObj) {
+            let strArray = sessionStorage.getItem('userResult');
+            let strResult = sessionStorage.getItem('result');
+            let strId = sessionStorage.getItem('resultId');
+            if (strArray) {
+               sessionStorage.removeItem('userResult');
+            }
+            sessionStorage.setItem('userResult', JSON.stringify(arrayObj));
+
+            if (strResult) {
+                sessionStorage.removeItem('result');
+            }
+            sessionStorage.setItem('result', JSON.stringify(resultObj));
+
+            if (strId) {
+                sessionStorage.removeItem('resultId');
+            }
+            sessionStorage.setItem('resultId', JSON.stringify(idObj));
+
 
         }
     }

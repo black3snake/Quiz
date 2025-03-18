@@ -53,36 +53,39 @@
                 .correctAnswer__question-options {
                     margin-top: 40px;
                     .correctAnswer__question-option {
-                        font-size: 20px;
                         margin-bottom: 20px;
                         display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
                         label {
-                            cursor: pointer;
+                            font-size: 20px;
+                            color: #333;
                         }
-                        input[type=radio] {
-                            appearance: none;
-                            -webkit-appearance: none;
+                        .correctAnswer__fake-radio {
+                            flex-shrink: 0;
+                            display: inline-block;
+                            background-color: white;
                             width: 20px;
                             height: 20px;
                             border: 3px solid #6933dc;
                             border-radius: 50%;
-                            margin: 0 13px 0 0;
-                            transform: translateY(2px);
-                            display: grid;
-                            place-content: center;
-                            &::before {
-                                content: '';
-                                width: 10px;
-                                height: 10px;
-                                border-radius: 50%;
-                                box-shadow: inset 10px 10px #6933dc;
-                                transition: .2s ease transform;
-                                transform: scale(0);
-                            }
-                            &:checked::before {
-                                transform: scale(1);
-                            }
+                            margin-right: 13px;
+                            position: relative;
                         }
+                        .correctAnswer__fake-radio.success {
+                            border: 6px solid #5FDC33;
+                        }
+                        .correctAnswer__fake-radio.success ~ label {
+                            color: #5FDC33;
+                        }
+                        .correctAnswer__fake-radio.error {
+                            border: 6px solid #DC3333;
+                        }
+                        .correctAnswer__fake-radio.error  ~ label {
+                            color: #DC3333;
+                        }
+
+
                     }
                 }
             }

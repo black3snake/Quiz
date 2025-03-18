@@ -137,6 +137,13 @@
 .test .container .test__pass-question a:hover {
   text-decoration: underline;
 }
-.test .container .test__pass-question img {
+.test .container .test__pass-question a:disabled {
+  color: #e2dfe7;
+}
+.test .container .test__pass-question a img {
   margin-left: 13px;
+}
+.test .container .test__pass-question a.dis {
+  color: #e2dfe7;
+  cursor: not-allowed;
 }
